@@ -53,18 +53,10 @@ public class TwoSum {
        int frontIndex = 0;
        int backIndex = numsList.size() - 1;
        
-       for (Pair p : numsList) {
-           int first = (int) p.getFirstVal();
-           int sec = (int) p.getSecondVal();
-           System.out.println(first + ", " + sec);
-       }
-       
        while (frontIndex <= backIndex) {
            
            int total = numsList.get(frontIndex).getFirstVal() + numsList.get(backIndex).getFirstVal();
-           //System.out.println(numsList.get(frontIndex).getFirstVal());
-           //System.out.println(numsList.get(frontIndex + 1).getFirstVal());
-           System.out.println(total);
+
            if (total == target) {
                ans[0] = numsList.get(frontIndex).getSecondVal();
                ans[1] = numsList.get(backIndex).getSecondVal();
@@ -80,9 +72,31 @@ public class TwoSum {
        return ans;
     }
     
+    // For debugging purposes
     public static void main(String[] args) {
         int[] arr = {2, 7, 11, 15};
         int[] ansArr = (twoSum(arr, 9));
         System.out.println("" + ansArr[0] + "," + ansArr[1]);
     }
+    
+    /*
+     * Sort method in Collections notes under Javadocs:
+     * This implementation is a stable, adaptive, iterative mergesort that requires far 
+     * fewer than n lg(n) comparisons when the input array is partially sorted, while 
+     * offering the performance of a traditional mergesort when the input array is 
+     * randomly ordered. If the input array is nearly sorted, the implementation 
+     * requires approximately n comparisons. Temporary storage requirements vary 
+     * from a small constant for nearly sorted input arrays to n/2 object references 
+     * for randomly ordered input arrays.
+     * 
+     * The implementation takes equal advantage of ascending and descending order 
+     * in its input array, and can take advantage of ascending and descending order 
+     * in different parts of the same input array. It is well-suited to merging two 
+     * or more sorted arrays: simply concatenate the arrays and sort the resulting array.
+     * 
+     * The implementation was adapted from Tim Peters's list sort for Python ( TimSort). 
+     * It uses techniques from Peter McIlroy's "Optimistic Sorting and Information 
+     * Theoretic Complexity", in Proceedings of the Fourth Annual ACM-SIAM Symposium 
+     * on Discrete Algorithms, pp 467-474, January 1993.
+     */
 }
