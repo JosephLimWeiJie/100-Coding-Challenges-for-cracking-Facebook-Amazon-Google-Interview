@@ -25,7 +25,6 @@ public class TwoSum {
         public U getSecondVal() {
             return this.secondVal;
         }
-
     } 
     
     public static int[] twoSum(int[] nums, int target) {
@@ -80,6 +79,8 @@ public class TwoSum {
     }
     
     /*
+     * Learning points:
+     * 
      * Sort method in Collections notes under Javadocs:
      * This implementation is a stable, adaptive, iterative mergesort that requires far 
      * fewer than n lg(n) comparisons when the input array is partially sorted, while 
