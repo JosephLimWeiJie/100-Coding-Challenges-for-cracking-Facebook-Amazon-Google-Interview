@@ -40,8 +40,7 @@ public class MergeTwoSortedList {
             } else if (l2 == null) {
                 curr.next = l1;
                 break;
-            }
-            
+            }            
         }
         // Link curr (which is the mergedList), back to finalList 
         return finalList.next;
